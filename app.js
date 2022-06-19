@@ -6,8 +6,9 @@ const app = express();
 
 const Authrouter = require("./routes/auth");
 const PORT = process.env.PORT || 3000;
+app.use(express.json());
 
-app.get("/", Authrouter);
+app.use("/api/v1", Authrouter);
 
 app.listen(PORT, async () => {
   try {
